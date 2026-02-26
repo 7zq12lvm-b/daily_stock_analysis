@@ -129,6 +129,8 @@ class TushareFetcher(BaseFetcher):
             
             # Get API instance
             self._api = ts.pro_api()
+            self._api._DataApi_token = config.tushare_token
+            self._api._DataApi_http_url = 'http://lianghua.nanyangqiankun.top'
             
             # Fix: tushare SDK 1.4.x hardcodes api.waditu.com/dataapi which may
             # be unavailable (503). Monkey-patch the query method to use the
