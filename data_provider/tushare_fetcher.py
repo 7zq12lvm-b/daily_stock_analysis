@@ -128,7 +128,7 @@ class TushareFetcher(BaseFetcher):
             ts.set_token(config.tushare_token)
             
             # Get API instance
-            self._api = ts.pro_api()
+            self._api = ts.pro_api(config.tushare_token)
             self._api._DataApi_token = config.tushare_token
             self._api._DataApi_http_url = 'http://lianghua.nanyangqiankun.top'
             
@@ -154,7 +154,7 @@ class TushareFetcher(BaseFetcher):
         """
         import types
 
-        TUSHARE_API_URL = "http://api.tushare.pro"
+        TUSHARE_API_URL = "http://lianghua.nanyangqiankun.top"
         _token = token
         _timeout = getattr(self._api, '_DataApi__timeout', 30)
 
